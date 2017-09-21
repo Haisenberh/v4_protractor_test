@@ -21,6 +21,12 @@ Now start up a server with:
 
 This will start up a Selenium Server and will output a bunch of info logs. Your Protractor test will send requests to this server to control a local browser. You can see information about the status of the server at *http://localhost:4444/wd/hub.*
 
+Reporting:
+
+HTML reporter for Jasmine2 and Protractor that will include screenshots of each test if you want. 
+
+>*npm install protractor-jasmine2-html-reporter --save-dev*
+
 Configuration
 
 All Protractor configuration listed in *conf.js* file
@@ -28,3 +34,11 @@ All Protractor configuration listed in *conf.js* file
 Run the test
 
 >*protractor conf.js*
+
+Usefull links:
+Protractor site:
+[(http://www.protractortest.org/#/)]
+
+Report:
+[(https://www.npmjs.com/package/protractor-jasmine2-html-reporter)]
+
