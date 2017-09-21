@@ -1,6 +1,6 @@
 /* My account test cases suite */
 
-var testData = require('./test_data');
+var testData = require('./TestData/test_data');
 var LoginPage = require('./PageObjects/sign-in-register-page');
 var MyAccountPage = require('./PageObjects/my-account-page');
 var OrderDetailsPage = require('./PageObjects/order-details-page');
