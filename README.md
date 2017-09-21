@@ -36,7 +36,8 @@ Run the test
 >*protractor conf.js*
 
 Usefull links:
-[Protractor site:] (http://www.protractortest.org/#/)
 
-[Reports:] (https://www.npmjs.com/package/protractor-jasmine2-html-reporter)
+Protractor site: (http://www.protractortest.org/#/)
+
+Reports: (https://www.npmjs.com/package/protractor-jasmine2-html-reporter)
 
