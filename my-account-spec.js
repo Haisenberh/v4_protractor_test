@@ -16,14 +16,17 @@ describe('My account test suite', function () {
     var addressesTab = new MyAccountAddressesTab();
     var createAddressPage = new CreateAddressPage();
 
-    it('Add new address to client valid test', function () {
-
+    // login as registered user before tests
+    beforeAll(function() {
         browser.get(testData.url.loginPageUrl);
         login.login(testData.credentials.registeredUserEmail, testData.credentials.registeredUserPassword);
+    });
+
+    it('Add new address to client valid test', function () {
         myAccountPage.my_addresses_link.click();
         addressesTab.add_ann_address.click();
         createAddressPage.enter_all_new_address_fields(testData.clientNewAddress.firstName, testData.clientNewAddress.surName, testData.clientNewAddress.company,
-            testData.clientNewAddress.isThisBusinessAddress, testData.clientNewAddress.address, testData.clientNewAddress.country, testData.clientNewAddress.postCode,
+            testData.clientNewAddress.address, testData.clientNewAddress.business_address, testData.clientNewAddress.country, testData.clientNewAddress.postCode,
             testData.clientNewAddress.city, testData.clientNewAddress.mobile, testData.clientNewAddress.addressTitle);
         createAddressPage.submit.click();
 
