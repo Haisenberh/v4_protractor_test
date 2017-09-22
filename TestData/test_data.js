@@ -11,6 +11,18 @@ var testData = {
     orderDetail: {
         orderNumber: 1,
         clientName: 'Andi Din'
+    },
+    clientNewAddress: {
+        firstName: 'Ben',
+        surName: 'Torrent',
+        company: 'Echo',
+        isThisBusinessAddress: 'NO',
+        address: '22 West',
+        country: 'USA',
+        postCode: '10001',
+        city: 'NY',
+        mobile: '123456789',
+        addressTitle: 'Home Address'
     }
 };
 
