@@ -43,9 +43,6 @@ describe('My account test suite', function () {
     });
 
         it('Print E-voucher valid test', function () {
-
-        browser.get(testData.url.loginPageUrl);
-        login.login(testData.credentials.registeredUserEmail, testData.credentials.registeredUserPassword);
         myAccountPage.paymentAcceptedLink.click();
         orderDetailsPage.print_evoucher_icon.click();
 
