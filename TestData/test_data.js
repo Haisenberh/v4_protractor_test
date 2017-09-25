@@ -6,7 +6,8 @@ var testData = {
         registeredUserPassword: '123123'
     },
     url: {
-        loginPageUrl: 'https://ticketsyasmarinacircuit.com/8481-driving-experiences/en/authentication/?back=fromHeader'
+        loginPageUrl: 'https://ticketsyasmarinacircuit.com/8481-driving-experiences/en/authentication/?back=fromHeader',
+        defaultUrl: 'https://ticketsyasmarinacircuit.com'
     },
     orderDetail: {
         orderNumber: 1,
@@ -23,6 +24,14 @@ var testData = {
         city: 'NY',
         mobile: '123456789',
         addressTitle: 'Home Address'
+    },
+    clientNewPersonalData: {
+        firstName: 'Ivan',
+        surName: 'Byno',
+        title: 'Mr.',
+        email: 'employee-boo@platinium-group.org',
+        mobile: '12232312323',
+        nationality: 'USA'
     }
 };
 

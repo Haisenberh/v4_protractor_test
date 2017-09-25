@@ -11,14 +11,15 @@ var CreateAddressPage = function () {
     this.mobile = element(by.id('phone'));
     this.address_title = element(by.id('address_title'));
     this.submit = element(by.id('addressSubmit'));
+    this.country_usa_item = element(by.xpath('//option[@value=\'21\']'));
 
-    this.enter_all_new_address_fields = function (first_name, surname, company, address, business_address, country, post_code, city_town, mobile, address_title) {
+    this.enterAllNewAddressFields = function (first_name, surname, company, address, business_address, country, post_code, city_town, mobile, address_title) {
         this.first_name.sendKeys(first_name);
         this.surname.sendKeys(surname);
         this.company.sendKeys(company);
         this.adress.sendKeys(address);
         this.business_address.sendKeys(business_address);
-        element(by.cssContainingText('option', country)).click();
+        this.country_usa_item.click();
         this.post_code.sendKeys(post_code);
         this.city_town.sendKeys(city_town);
         this.mobile.sendKeys(mobile);
