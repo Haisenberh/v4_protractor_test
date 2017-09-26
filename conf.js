@@ -19,24 +19,25 @@ exports.config = {
             }
         }
     },
-    resultJsonOutputFile:'./Reports/testResults.json', //file with reports,
+    resultJsonOutputFile: './Reports/testResults.json', //file with reports,
+
+    onPrepare: function () {
+        jasmine.getEnv().addReporter(
+            new SpecReporter({
+                spec: {
+                    displayStacktrace: false,
+                    displayErrorMessages: true
+                }
+            }));
+    },
 
     // html report
-    onPrepare: function() {
+    onPrepare: function () {
         jasmine.getEnv().addReporter(
             new Jasmine2HtmlReporter({
                 savePath: './Reports'
             })
         );
-    },
-
-    onPrepare: function () {
-        jasmine.getEnv().addReporter(
-            new SpecReporter({
-            spec: {
-                displayStacktrace: false,
-                displayErrorMessages: true
-            }
-        }));
     }
+
 };
