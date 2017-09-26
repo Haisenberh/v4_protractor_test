@@ -6,3 +6,4 @@ gen
 .idea/
 # Reports folder
 /Reports/*
+/Download/*

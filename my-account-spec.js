@@ -1,9 +1,9 @@
 /* My account test cases suite */
+var fs = require('fs');
 var testData = require('./TestData/test_data');
 var LoginPage = require('./PageObjects/sign-in-register-page');
 var MyAccountDefaultTab = require('./PageObjects/my-account-default-tab');
 var OrderDetailsPage = require('./PageObjects/order-details-page');
-var PdfVoucherPage = require('./PageObjects/print-pdf-voucher-page');
 var MyAccountAddressesTab = require('./PageObjects/my-account-addresses-tab');
 var CreateAddressPage = require('./PageObjects/create-address-page');
 var PersonalInfoPage = require('./PageObjects/personal-info-tab');
@@ -16,7 +16,6 @@ describe('My account test suite', function () {
     var login = new LoginPage();
     var myAccountPage = new MyAccountDefaultTab();
     var orderDetailsPage = new OrderDetailsPage();
-    var pdfVoucherPage = new PdfVoucherPage();
     var addressesTab = new MyAccountAddressesTab();
     var createAddressPage = new CreateAddressPage();
     var personalInfoPage = new PersonalInfoPage();
@@ -72,14 +71,14 @@ describe('My account test suite', function () {
         expect(personalInfoPage.phone_number.getAttribute('value')).toEqual(testData.clientNewPersonalData.mobile);
     });
 
-    it('Print E-voucher valid test', function () {
+    it('Download E-voucher valid test', function () {
         homePage.my_account_link.click();
         myAccountPage.paymentAcceptedLink.click();
         orderDetailsPage.print_evoucher_icon.click();
 
-        //assertion
-        expect(pdfVoucherPage.clientName).toEqual(testData.orderDetail.clientName);
-        expect(pdfVoucherPage.orderNumber).toEqual(testData.orderDetail.orderNumber);
+        //assert that file exist
+        expect(fs.existsSync('./Download/e-voucher.pdf'));
+
     });
 
 });
