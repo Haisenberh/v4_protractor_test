@@ -1,5 +1,7 @@
 /* Configuration for protractor */
 var Jasmine2HtmlReporter = require('protractor-jasmine2-html-reporter');
+let SpecReporter = require('jasmine-spec-reporter').SpecReporter;
+
 
 exports.config = {
     framework: 'jasmine2',
@@ -17,5 +19,14 @@ exports.config = {
                 savePath: './Reports'
             })
         );
+    },
+
+    onPrepare: function () {
+        jasmine.getEnv().addReporter(new SpecReporter({
+            spec: {
+                displayStacktrace: false,
+                displayErrorMessages: false
+            }
+        }));
     }
 };
