@@ -29,7 +29,7 @@ HTML reporter for Jasmine2 and Protractor that will include screenshots of each 
 
 Real time console spec reporter for jasmine testing framework.
 
-npm install jasmine-spec-reporter --save-dev
+>*npm install jasmine-spec-reporter --save-dev*
 
 Configuration
 
