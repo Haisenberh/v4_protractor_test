@@ -22,13 +22,9 @@ describe('My account test suite', function () {
 
     // login as registered user before tests
     beforeAll(function () {
+        browser.driver.manage().window().maximize();
         browser.get(testData.url.loginPageUrl);
         login.login(testData.credentials.registeredUserEmail, testData.credentials.registeredUserPassword);
-    });
-
-    // login as registered user before tests
-    afterEach(function () {
-        browser.get(testData.url.defaultUrl);
     });
 
     it('Add new address to client valid test', function () {
@@ -78,7 +74,6 @@ describe('My account test suite', function () {
 
         //assert that file exist
         expect(fs.existsSync('./Download/e-voucher.pdf'));
-
     });
 
 });

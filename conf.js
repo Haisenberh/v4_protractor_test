@@ -2,6 +2,25 @@
 var Jasmine2HtmlReporter = require('protractor-jasmine2-html-reporter');
 let SpecReporter = require('jasmine-spec-reporter').SpecReporter;
 
+var specReporter = new SpecReporter({
+    spec: {
+        displayStacktrace: false,
+        displayErrorMessages: true
+    }
+});
+
+
+var jasmine2HtmlReporter = new Jasmine2HtmlReporter({
+    savePath: './Reports',
+    screenshotsFolder: './screenshots',
+    cleanDestination: true,
+    takeScreenshots: true,
+    takeScreenshotsOnlyOnFailures: true,
+    showPassed: false,
+    fileNameDateSuffix: true
+});
+
+
 exports.config = {
     framework: 'jasmine2',
     seleniumAddress: 'http://localhost:4444/wd/hub',
@@ -21,23 +40,10 @@ exports.config = {
     },
     resultJsonOutputFile: './Reports/testResults.json', //file with reports,
 
+    //add custom reporters to jasmine
     onPrepare: function () {
-        jasmine.getEnv().addReporter(
-            new SpecReporter({
-                spec: {
-                    displayStacktrace: false,
-                    displayErrorMessages: true
-                }
-            }));
-    },
-
-    // html report
-    onPrepare: function () {
-        jasmine.getEnv().addReporter(
-            new Jasmine2HtmlReporter({
-                savePath: './Reports'
-            })
-        );
+        jasmine.getEnv().addReporter(jasmine2HtmlReporter);
+        jasmine.getEnv().addReporter(specReporter);
     }
 
 };
