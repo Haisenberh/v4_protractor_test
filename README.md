@@ -31,6 +31,10 @@ Real time console spec reporter for jasmine testing framework.
 
 >*npm install jasmine-spec-reporter --save-dev*
 
+Random text generator for test data
+
+>*npm install randomstring*
+
 Configuration
 
 All Protractor configuration listed in *conf.js* file
@@ -39,9 +43,10 @@ Run the test
 
 >*protractor conf.js*
 
-Usefull links:
+Useful links:
 
 Protractor site: (http://www.protractortest.org/#/)
 
 Reports: (https://www.npmjs.com/package/protractor-jasmine2-html-reporter)
 
+RandomText: https://github.com/klughammer/node-randomstring

@@ -9,7 +9,6 @@ var specReporter = new SpecReporter({
     }
 });
 
-
 var jasmine2HtmlReporter = new Jasmine2HtmlReporter({
     savePath: './Reports',
     screenshotsFolder: './screenshots',
@@ -20,11 +19,15 @@ var jasmine2HtmlReporter = new Jasmine2HtmlReporter({
     fileNameDateSuffix: true
 });
 
-
 exports.config = {
     framework: 'jasmine2',
     seleniumAddress: 'http://localhost:4444/wd/hub',
-    specs: ['my-account-spec.js'],
+
+    suites: {
+        login: ['Suites/login-spec.js'],
+        registration: ['Suites/registration-spec.js'],
+        myAccount: ['Suites/my-account-spec.js']
+    },
     capabilities: {
         browserName: 'chrome',
         chromeOptions: {
@@ -40,10 +43,13 @@ exports.config = {
     },
     resultJsonOutputFile: './Reports/testResults.json', //file with reports,
 
-    //add custom reporters to jasmine
     onPrepare: function () {
+
+        //maximize browser window
+        browser.driver.manage().window().maximize();
+
+        //add custom reporters
         jasmine.getEnv().addReporter(jasmine2HtmlReporter);
         jasmine.getEnv().addReporter(specReporter);
     }
-
 };
