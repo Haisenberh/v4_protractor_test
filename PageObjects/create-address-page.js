@@ -17,7 +17,7 @@ var CreateAddressPage = function () {
         this.first_name.sendKeys(first_name);
         this.surname.sendKeys(surname);
         this.company.sendKeys(company);
-        this.adress.sendKeys(address);
+        this.address.sendKeys(address);
         this.business_address.sendKeys(business_address);
         this.country_usa_item.click();
         this.post_code.sendKeys(post_code);
