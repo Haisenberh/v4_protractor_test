@@ -26,7 +26,8 @@ exports.config = {
     suites: {
         login: ['Suites/login-spec.js'],
         registration: ['Suites/registration-spec.js'],
-        myAccount: ['Suites/my-account-spec.js']
+        myAccount: ['Suites/my-account-spec.js'],
+        f1Tickets: ['Suites/buy-f1-ticket-spec.js']
     },
     capabilities: {
         browserName: 'chrome',

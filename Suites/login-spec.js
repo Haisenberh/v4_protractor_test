@@ -8,13 +8,13 @@ describe('Login test suite', function () {
     var login = new LoginPage();
     var homePage = new HomePage();
 
-    // login as registered user before tests
+    // navigate to login page before all tests
     beforeAll(function () {
         browser.get(testData.url.loginPageUrl);
         homePage.my_account_link.click();
     });
 
-    // login as registered user before tests
+    // clear inputs after tests
     afterEach(function () {
         login.login_email.clear();
         login.login_password.clear();
